@@ -14,6 +14,14 @@ h3 {
   text-decoration: underline #fdbd1a 3px;
 }
 
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
 .brewer {
   background-color: antiquewhite;
   color: #5b3f23;
@@ -33,6 +41,8 @@ button {
   border: none;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 button:hover {
@@ -59,4 +69,14 @@ a:hover {
 .beercontainer {
   background-color: #fdbd1a;
   padding: 10px;
+}
+
+.readmecontainer {
+  background-color: #fcd061;
+  border: #5b3f23 3px solid;
+  padding: 10px;
+  width: 55%;
+  margin: 1rem;
+  color: #5b3f23;
+  text-align: left;
 }

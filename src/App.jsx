@@ -40,10 +40,9 @@ function App() {
       <h1>Get your favourite beer</h1>
       <img src={beermug} className="beer" />
       <br />
-      <button onClick={clickHandler}>Find your local brewer!</button>
-
-      {/* für Readme: */}
       <button onClick={showReadme}>Show/hide Readme</button>
+
+      <button onClick={clickHandler}>Find your local brewer!</button>
       <div style={{ display: "flex" }}>
         {readmeActive && <ReadmeContent />}
 
@@ -51,7 +50,7 @@ function App() {
           {loadData &&
             data.map((x) => (
               <div className="beercontainer">
-            <div key={x.id} className="brewer">
+                <div key={x.id} className="brewer">
                   <h3>
                     {x.name} ({x.brewery_type})
                   </h3>
@@ -60,7 +59,7 @@ function App() {
                   </a>
                   <p>State: {x.state}</p>
                 </div>
-          </div>
+              </div>
             ))}
         </div>
       </div>

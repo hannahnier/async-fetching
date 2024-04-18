@@ -1,9 +1,9 @@
 const ReadmeContent = () => {
   return (
-    <div style={{ background: "palegoldenrod", width: "50%", margin: "1rem" }}>
+    <div className="readmecontainer">
       <div>
-        <h1>Fetching mit `async/await` (Readme)</h1>
-        <h2>Wozu das Ganze?</h2>
+        <h3>Fetching mit `async/await` (Readme)</h3>
+        <h4>Wozu das Ganze?</h4>
         <p>
           Während wir (zum Beispiel beim Fetching) auf eine Antwort vom Server
           warten, soll unser synchroner Code nicht blockiert werden. Sobald wir
@@ -11,7 +11,7 @@ const ReadmeContent = () => {
           Möglichkeit dafür bietet `async/await`. Diese JavaScript-Keywords sind
           relativ neu und vereinfachen die asynchrone Programmierung deutlich.
         </p>
-        <h2>So funktioniert es</h2>
+        <h4>So funktioniert es</h4>
         <p>
           In unserem Beispiel verwenden wir `async` und `await` zusammen mit
           `fetch`, um Daten von einer API abzurufen, die eine Liste von
@@ -37,7 +37,7 @@ getData();`}
           erfüllt/abgelehnt ist. Danach wird die Ausführung der `async`
           -Funktion ganz normal fortgesetzt.
         </p>
-        <h3>Fehlerbehandlung mit Try-Catch</h3>
+        <h5>Fehlerbehandlung mit Try-Catch</h5>
         <p>
           Um Fehler in asynchronem Code mit async/await zu behandeln, verwenden
           wir `try-catch`. Wenn der Im `catch`-Block können wir Fehler ausgeben
@@ -59,7 +59,7 @@ getData();`}
 };`}
           </code>
         </pre>
-        <h3>Besonderheit in `React`</h3>
+        <h5>Besonderheit in `React`</h5>
         <p>
           In `React` werden Komponenten oft neu gerendert, sobald sich States
           oder Props ändern. Damit das Fetching nicht bei jedem neuen Rendern
@@ -81,7 +81,7 @@ getData();`}
   }, []);`}
           </code>
         </pre>
-        <h3>Vorteile von `async/await` gegenüber `.then`</h3>
+        <h5>Vorteile von `async/await` gegenüber `.then`</h5>
         <p>
           Der größte Vorteil von `async/await` gegenüber der Verwendung von
           `.then`-Ketten ist die Lesbarkeit. Mit `async/await` sieht asynchroner
