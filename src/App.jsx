@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import ReadmeContent from "./ReadmeContent";
 
 function App() {
   const [data, setData] = useState([]);
   const [loadData, setLoadData] = useState(false);
+  const [readmeActive, setReadmeActive] = useState(false);
 
   const url = "https://api.openbrewerydb.org/v1/breweries";
 
@@ -24,7 +26,11 @@ function App() {
   }, []);
 
   const clickHandler = () => {
-    setLoadData(true);
+    setLoadData((prev) => !prev);
+  };
+
+  const showReadme = () => {
+    setReadmeActive((prev) => !prev);
   };
 
   return (
@@ -33,18 +39,26 @@ function App() {
 
       <button onClick={clickHandler}>Find your local brewer!</button>
 
-      {loadData &&
-        data.map((x) => (
-          <div key={x.id}>
-            <h3>
-              {x.name} ({x.brewery_type})
-            </h3>
-            <a href={x.website_url} target="_blank">
-              Visit website
-            </a>
-            <p>{x.state}</p>
-          </div>
-        ))}
+      {/* für Readme: */}
+      <button onClick={showReadme}>Show/hide Readme</button>
+      <div style={{ display: "flex" }}>
+        {readmeActive && <ReadmeContent />}
+
+        <div>
+          {loadData &&
+            data.map((x) => (
+              <div key={x.id}>
+                <h3>
+                  {x.name} ({x.brewery_type})
+                </h3>
+                <a href={x.website_url} target="_blank">
+                  Visit website
+                </a>
+                <p>{x.state}</p>
+              </div>
+            ))}
+        </div>
+      </div>
     </>
   );
 }
