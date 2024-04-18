@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import arrow from "./images/arrow-right-solid (1).svg";
+import beermug from "./images/beer-mug-empty-solid.svg";
 
 function App() {
   const [data, setData] = useState([]);
@@ -30,19 +32,22 @@ function App() {
   return (
     <>
       <h1>Get your favourite beer</h1>
-
+      <img src={beermug} className="beer" />
+      <br />
       <button onClick={clickHandler}>Find your local brewer!</button>
 
       {loadData &&
         data.map((x) => (
-          <div key={x.id}>
-            <h3>
-              {x.name} ({x.brewery_type})
-            </h3>
-            <a href={x.website_url} target="_blank">
-              Visit website
-            </a>
-            <p>{x.state}</p>
+          <div className="beercontainer">
+            <div key={x.id} className="brewer">
+              <h3>
+                {x.name} ({x.brewery_type})
+              </h3>
+              <a href={x.website_url} target="_blank">
+                <img src={arrow} style={{ width: "10px" }} /> Visit website
+              </a>
+              <p>State: {x.state}</p>
+            </div>
           </div>
         ))}
     </>

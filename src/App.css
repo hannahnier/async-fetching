@@ -1,0 +1,62 @@
+html {
+  /* background-color: #5b3f23; */
+  background-color: #6f943d;
+  color: antiquewhite;
+}
+
+h1 {
+  font-size: 50px;
+  text-shadow: 10px 5px 10px #2b4706;
+  text-decoration: underline wavy #fdbd1a 3px;
+}
+
+h3 {
+  text-decoration: underline #fdbd1a 3px;
+}
+
+.brewer {
+  background-color: antiquewhite;
+  color: #5b3f23;
+  margin: 30px;
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button {
+  background-color: #5b3f23;
+  color: #fdbd1a;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #6f943d;
+  color: #5b3f23;
+}
+
+a {
+  color: #6f943d;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+}
+
+a:hover {
+  color: #2b4706;
+}
+
+.beer {
+  width: 50px;
+  padding-bottom: 20px;
+}
+
+.beercontainer {
+  background-color: #fdbd1a;
+  padding: 10px;
+}
