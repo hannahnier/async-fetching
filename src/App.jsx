@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import ReadmeContent from "./ReadmeContent";
 import arrow from "./images/arrow-right-solid (1).svg";
 import beermug from "./images/beer-mug-empty-solid.svg";
 
 function App() {
   const [data, setData] = useState([]);
   const [loadData, setLoadData] = useState(false);
+  const [readmeActive, setReadmeActive] = useState(false);
 
   const url = "https://api.openbrewerydb.org/v1/breweries";
 
@@ -26,7 +28,11 @@ function App() {
   }, []);
 
   const clickHandler = () => {
-    setLoadData(true);
+    setLoadData((prev) => !prev);
+  };
+
+  const showReadme = () => {
+    setReadmeActive((prev) => !prev);
   };
 
   return (
@@ -36,20 +42,28 @@ function App() {
       <br />
       <button onClick={clickHandler}>Find your local brewer!</button>
 
-      {loadData &&
-        data.map((x) => (
-          <div className="beercontainer">
+      {/* für Readme: */}
+      <button onClick={showReadme}>Show/hide Readme</button>
+      <div style={{ display: "flex" }}>
+        {readmeActive && <ReadmeContent />}
+
+        <div>
+          {loadData &&
+            data.map((x) => (
+              <div className="beercontainer">
             <div key={x.id} className="brewer">
-              <h3>
-                {x.name} ({x.brewery_type})
-              </h3>
-              <a href={x.website_url} target="_blank">
-                <img src={arrow} style={{ width: "10px" }} /> Visit website
-              </a>
-              <p>State: {x.state}</p>
-            </div>
+                  <h3>
+                    {x.name} ({x.brewery_type})
+                  </h3>
+                  <a href={x.website_url} target="_blank">
+                    <img src={arrow} style={{ width: "10px" }} /> Visit website
+                  </a>
+                  <p>State: {x.state}</p>
+                </div>
           </div>
-        ))}
+            ))}
+        </div>
+      </div>
     </>
   );
 }
