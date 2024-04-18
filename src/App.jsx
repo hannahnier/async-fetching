@@ -12,6 +12,7 @@ function App() {
   const url = "https://api.openbrewerydb.org/v1/breweries";
 
   useEffect(() => {
+    // Async-Function for fetching data from API:
     const getData = async () => {
       try {
         const res = await fetch(url);
@@ -27,10 +28,12 @@ function App() {
     getData();
   }, []);
 
-  const clickHandler = () => {
+  // Toggle for Fetch button:
+  const fetchHandler = () => {
     setLoadData((prev) => !prev);
   };
 
+  // Toggle for Readme button:
   const showReadme = () => {
     setReadmeActive((prev) => !prev);
   };
@@ -40,12 +43,16 @@ function App() {
       <h1>Get your favourite beer</h1>
       <img src={beermug} className="beer" />
       <br />
-      <button onClick={showReadme}>Show/hide Readme</button>
 
-      <button onClick={clickHandler}>Find your local brewer!</button>
+      {/* Buttons: */}
+      <button onClick={showReadme}>Show/hide Readme</button>
+      <button onClick={fetchHandler}>Find your local brewer!</button>
+
+      {/* Readme Container: */}
       <div style={{ display: "flex" }}>
         {readmeActive && <ReadmeContent />}
 
+        {/* Fetch Container: */}
         <div>
           {loadData &&
             data.map((x) => (
