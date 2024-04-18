@@ -49,8 +49,8 @@ function App() {
         <div>
           {loadData &&
             data.map((x) => (
-              <div className="beercontainer">
-                <div key={x.id} className="brewer">
+              <div className="beercontainer" key={x.id}>
+                <div className="brewer">
                   <h3>
                     {x.name} ({x.brewery_type})
                   </h3>
